@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Node",
+    "id": 0,
+    "position": {
+      "x": 628.24817,
+      "y": 204.51286
+    },
+    "node_type": "Coordiantor",
+    "range": 176
+  },
+  {
+    "name": "Node",
+    "id": 1,
+    "position": {
+      "x": 887.53754,
+      "y": 207.74174
+    },
+    "node_type": "Endpoint",
+    "range": 94
+  },
+  {
+    "name": "Node",
+    "id": 2,
+    "position": {
+      "x": 1057.3091,
+      "y": 208.87363
+    },
+    "node_type": "Router",
+    "range": 96
+  },
+  {
+    "name": "Node",
+    "id": 3,
+    "position": {
+      "x": 1236.7402,
+      "y": 206.93427
+    },
+    "node_type": "Endpoint",
+    "range": 92
+  },
+  {
+    "name": "Node",
+    "id": 4,
+    "position": {
+      "x": 1447.8566,
+      "y": 341.80188
+    },
+    "node_type": "Endpoint",
+    "range": 74
+  },
+  {
+    "name": "Node",
+    "id": 5,
+    "position": {
+      "x": 1472.5332,
+      "y": 511.77814
+    },
+    "node_type": "Endpoint",
+    "range": 123
+  },
+  {
+    "name": "Node",
+    "id": 6,
+    "position": {
+      "x": 1311.2854,
+      "y": 667.20746
+    },
+    "node_type": "Endpoint",
+    "range": 174
+  },
+  {
+    "name": "Node",
+    "id": 7,
+    "position": {
+      "x": 1013.6773,
+      "y": 702.0675
+    },
+    "node_type": "Endpoint",
+    "range": 91
+  },
+  {
+    "name": "Node",
+    "id": 8,
+    "position": {
+      "x": 696.02423,
+      "y": 678.8778
+    },
+    "node_type": "Endpoint",
+    "range": 90
+  },
+  {
+    "name": "Node",
+    "id": 9,
+    "position": {
+      "x": 856.93384,
+      "y": 709.97345
+    },
+    "node_type": "Router",
+    "range": 110
+  },
+  {
+    "name": "Node",
+    "id": 10,
+    "position": {
+      "x": 532.2666,
+      "y": 935.3618
+    },
+    "node_type": "Endpoint",
+    "range": 119
+  },
+  {
+    "name": "Node",
+    "id": 11,
+    "position": {
+      "x": 698.5921,
+      "y": 1008.804
+    },
+    "node_type": "Endpoint",
+    "range": 99
+  },
+  {
+    "name": "Node",
+    "id": 12,
+    "position": {
+      "x": 544.1202,
+      "y": 772.7358
+    },
+    "node_type": "Router",
+    "range": 169
+  },
+  {
+    "name": "Node",
+    "id": 13,
+    "position": {
+      "x": 1133.512,
+      "y": 686.77295
+    },
+    "node_type": "Router",
+    "range": 148
+  },
+  {
+    "name": "Node",
+    "id": 14,
+    "position": {
+      "x": 1351.1936,
+      "y": 448.6571
+    },
+    "node_type": "Router",
+    "range": 169
+  },
+  {
+    "name": "Node",
+    "id": 15,
+    "position": {
+      "x": 1213.8784,
+      "y": 304.21466
+    },
+    "node_type": "Router",
+    "range": 147
+  },
+  {
+    "name": "Node",
+    "id": 16,
+    "position": {
+      "x": 954.66394,
+      "y": 264.70038
+    },
+    "node_type": "Router",
+    "range": 75
+  },
+  {
+    "name": "Node",
+    "id": 17,
+    "position": {
+      "x": 642.898,
+      "y": 910.5048
+    },
+    "node_type": "Router",
+    "range": 72
+  }
+]

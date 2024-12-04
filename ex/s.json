@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Node",
+    "id": 0,
+    "position": {
+      "x": 538.25073,
+      "y": 186.81142
+    },
+    "node_type": "Endpoint",
+    "range": 140
+  },
+  {
+    "name": "Node",
+    "id": 1,
+    "position": {
+      "x": 766.33215,
+      "y": 191.13629
+    },
+    "node_type": "Endpoint",
+    "range": 140
+  },
+  {
+    "name": "Node",
+    "id": 2,
+    "position": {
+      "x": 933.6618,
+      "y": 194.03922
+    },
+    "node_type": "Endpoint",
+    "range": 140
+  },
+  {
+    "name": "Node",
+    "id": 3,
+    "position": {
+      "x": 952.3809,
+      "y": 397.06808
+    },
+    "node_type": "Endpoint",
+    "range": 140
+  },
+  {
+    "name": "Node",
+    "id": 4,
+    "position": {
+      "x": 525.78326,
+      "y": 400.70892
+    },
+    "node_type": "Endpoint",
+    "range": 140
+  },
+  {
+    "name": "Node",
+    "id": 5,
+    "position": {
+      "x": 754.6309,
+      "y": 400.1441
+    },
+    "node_type": "Endpoint",
+    "range": 140
+  },
+  {
+    "name": "Node",
+    "id": 6,
+    "position": {
+      "x": 1171.1208,
+      "y": 286.1366
+    },
+    "node_type": "Coordiantor",
+    "range": 200
+  },
+  {
+    "name": "Node",
+    "id": 7,
+    "position": {
+      "x": 526.5905,
+      "y": 744.6865
+    },
+    "node_type": "Router",
+    "range": 167
+  },
+  {
+    "name": "Node",
+    "id": 8,
+    "position": {
+      "x": 780.9251,
+      "y": 757.3727
+    },
+    "node_type": "Endpoint",
+    "range": 133
+  },
+  {
+    "name": "Node",
+    "id": 9,
+    "position": {
+      "x": 987.9181,
+      "y": 751.633
+    },
+    "node_type": "Router",
+    "range": 189
+  },
+  {
+    "name": "Node",
+    "id": 10,
+    "position": {
+      "x": 538.72705,
+      "y": 990.018
+    },
+    "node_type": "Endpoint",
+    "range": 181
+  },
+  {
+    "name": "Node",
+    "id": 11,
+    "position": {
+      "x": 771.5465,
+      "y": 998.1486
+    },
+    "node_type": "Endpoint",
+    "range": 186
+  },
+  {
+    "name": "Node",
+    "id": 12,
+    "position": {
+      "x": 1016.52795,
+      "y": 1003.4184
+    },
+    "node_type": "Endpoint",
+    "range": 162
+  },
+  {
+    "name": "Node",
+    "id": 13,
+    "position": {
+      "x": 1273.2119,
+      "y": 874.99854
+    },
+    "node_type": "Coordiantor",
+    "range": 200
+  }
+]

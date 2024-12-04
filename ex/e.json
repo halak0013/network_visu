@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Sıcaklık",
+    "id": 0,
+    "position": {
+      "x": 625.08215,
+      "y": 228.03099
+    },
+    "node_type": "Endpoint",
+    "range": 94
+  },
+  {
+    "name": "Priz",
+    "id": 1,
+    "position": {
+      "x": 980.1006,
+      "y": 187.39194
+    },
+    "node_type": "Endpoint",
+    "range": 151
+  },
+  {
+    "name": "Işık",
+    "id": 2,
+    "position": {
+      "x": 963.1463,
+      "y": 344.96652
+    },
+    "node_type": "Endpoint",
+    "range": 51
+  },
+  {
+    "name": "Fırın",
+    "id": 3,
+    "position": {
+      "x": 902.71985,
+      "y": 550.6103
+    },
+    "node_type": "Endpoint",
+    "range": 194
+  },
+  {
+    "name": "Perde",
+    "id": 4,
+    "position": {
+      "x": 541.7272,
+      "y": 462.50946
+    },
+    "node_type": "Endpoint",
+    "range": 185
+  },
+  {
+    "name": "Çöp",
+    "id": 5,
+    "position": {
+      "x": 745.2404,
+      "y": 381.2631
+    },
+    "node_type": "Endpoint",
+    "range": 105
+  },
+  {
+    "name": "Buzdolabı",
+    "id": 6,
+    "position": {
+      "x": 1117.5043,
+      "y": 572.47205
+    },
+    "node_type": "Endpoint",
+    "range": 80
+  },
+  {
+    "name": "Node",
+    "id": 7,
+    "position": {
+      "x": 831.7954,
+      "y": 433.4218
+    },
+    "node_type": "Router",
+    "range": 144
+  },
+  {
+    "name": "Node",
+    "id": 8,
+    "position": {
+      "x": 597.2079,
+      "y": 320.96613
+    },
+    "node_type": "Router",
+    "range": 149
+  },
+  {
+    "name": "Kordinatör",
+    "id": 9,
+    "position": {
+      "x": 1044.9282,
+      "y": 425.8845
+    },
+    "node_type": "Coordiantor",
+    "range": 109
+  }
+]
