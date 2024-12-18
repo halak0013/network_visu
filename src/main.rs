@@ -1,8 +1,6 @@
 pub mod main_ui;
 
-use  main_ui::NodeApp;
-
-
+use main_ui::NodeApp;
 
 fn main() -> Result<(), eframe::Error> {
     let options = eframe::NativeOptions {
@@ -12,6 +10,6 @@ fn main() -> Result<(), eframe::Error> {
     eframe::run_native(
         "Kablosuz Ağ Simülasyonu",
         options,
-        Box::new(|_cc| Box::<NodeApp>::default()),
+        Box::new(|_cc| Ok(Box::<NodeApp>::default())),
     )
 }

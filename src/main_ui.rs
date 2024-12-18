@@ -180,7 +180,7 @@ impl eframe::App for NodeApp {
                     }
                 }
 
-                if node_response.drag_released() {
+                if node_response.drag_stopped() {
                     self.dragging = None;
                 }
 
