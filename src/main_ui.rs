@@ -27,6 +27,7 @@ pub struct NodeApp {
     selected: Option<usize>,
     save_path: String,
     load_path: String,
+    k_size: f32,
 }
 
 impl Default for NodeApp {
@@ -39,11 +40,13 @@ impl Default for NodeApp {
             selected: None,
             save_path: String::new(),
             load_path: String::new(),
+            k_size: 0.8,
         }
     }
 }
 
 impl NodeApp {
+    const TICK: f32 = 0.05;
     fn save_nodes(&self) -> Result<(), std::io::Error> {
         let json = serde_json::to_string_pretty(&self.nodes)?;
         fs::write(&self.save_path, json)
@@ -84,7 +87,6 @@ impl eframe::App for NodeApp {
                 }
             }
 
-
             ui.separator();
             // Düğüm seçimi
             if self.selected.is_some() {
@@ -116,6 +118,38 @@ impl eframe::App for NodeApp {
                 .input(|i| i.pointer.interact_pos())
                 .unwrap_or(egui::Pos2::ZERO);
 
+            let response = ui.interact(
+                ui.clip_rect(),
+                egui::Id::new("panel_drag"),
+                egui::Sense::drag(),
+            );
+
+            if response.dragged() {
+                for node in &mut self.nodes {
+                    node.position = (node.position.to_vec2() + response.drag_delta()).to_pos2();
+                }
+            }
+
+            // if let Some(scroll_delta) = ui.input(|i| i.raw_scroll_delta.y) {
+            //     // scroll_delta pozitif yukarı, negatif aşağı yönü gösterir
+            //     // Değişim miktarını ayarlayabilirsiniz (örn: 0.1)
+            //     let change: f32 = if scroll_delta > 0.0 { 0.1 } else { -0.1 };
+            //
+            //     // self.k_size değerini sınırlar içinde tut
+            //     self.k_size = (self.k_size as f32 + change).clamp(0.5, 2.0);
+            if response.hovered() {
+                let zoom_delta = ui.input(|i| i.zoom_delta());
+                if !(0.99..=1.01).contains(&zoom_delta) {
+                    println!("{}, {}", zoom_delta, (zoom_delta - 1.) * 2.);
+                    let value = if (zoom_delta - 1.) * 2. > 0.0 {
+                        Self::TICK
+                    } else {
+                        -Self::TICK
+                    };
+                    self.k_size += value;
+                }
+            }
+
             // Sağ tıklama ile yeni düğüm oluştur
             if ui.input(|i| i.pointer.secondary_clicked()) {
                 let mut rng = rand::thread_rng();
@@ -133,7 +167,7 @@ impl eframe::App for NodeApp {
             for node in &self.nodes {
                 ui.painter().circle(
                     node.position,
-                    node.range as f32,
+                    node.range as f32 * self.k_size,
                     Color32::from_rgba_premultiplied(255, 255, 0xE0, 230),
                     egui::Stroke::NONE,
                 );
@@ -143,18 +177,20 @@ impl eframe::App for NodeApp {
             for node_m in &self.nodes {
                 for node_i in &self.nodes {
                     if node_m.id != node_i.id {
-                        if node_m.node_type == NodeType::Endpoint
-                            && node_i.node_type == NodeType::Endpoint
-                        {
-                            continue;
-                        } else if node_m.position.distance_sq(node_i.position)
-                            > f32::powi((node_m.range + node_i.range) as f32, 2)
+                        if (node_m.node_type == NodeType::Endpoint
+                            && node_i.node_type == NodeType::Endpoint)
+                            || node_m.position.distance_sq(node_i.position)
+                                > f32::powf(
+                                    node_m.range as f32 * self.k_size
+                                        + node_i.range as f32 * self.k_size,
+                                    2.,
+                                )
                         {
                             continue;
                         }
                         ui.painter().line_segment(
                             [node_m.position, node_i.position],
-                            egui::Stroke::new(3.0, Color32::RED),
+                            egui::Stroke::new(3.0 * self.k_size, Color32::RED),
                         );
                     }
                 }
@@ -162,8 +198,10 @@ impl eframe::App for NodeApp {
 
             // Düğümleri çiz ve etkileşimi yönet
             for node in &mut self.nodes {
-                let node_rect =
-                    egui::Rect::from_center_size(node.position, egui::Vec2::new(50.0, 50.0));
+                let node_rect = egui::Rect::from_center_size(
+                    node.position,
+                    egui::Vec2::new(50.0 * self.k_size, 50.0 * self.k_size),
+                );
 
                 // Fare ile sürükleme
                 let node_response = ui.allocate_rect(node_rect, egui::Sense::drag());
@@ -191,11 +229,11 @@ impl eframe::App for NodeApp {
                     NodeType::Endpoint => Color32::LIGHT_BLUE,
                 };
 
-                ui.painter().rect_filled(node_rect, 5.0, node_color);
+                ui.painter().rect_filled(node_rect, 100., node_color);
                 ui.painter().text(
                     node_rect.center(),
                     egui::Align2::CENTER_CENTER,
-                    format!("{}\n{}", node.id, node.name),
+                    format!("{}\n{}", node.name, node.id),
                     egui::FontId::proportional(13.0),
                     Color32::BLACK,
                 );
